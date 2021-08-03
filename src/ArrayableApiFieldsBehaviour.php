@@ -6,7 +6,7 @@ use yii\base\Behavior;
 use yii\base\ModelEvent;
 use yii\db\ActiveRecord;
 
-class ArrayableInputBehaviour extends Behavior
+class ArrayableApiFieldsBehaviour extends Behavior
 {
     /**
      * @var string|string[]
