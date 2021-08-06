@@ -43,7 +43,11 @@ class ArrayableApiFieldsBehaviour extends Behavior
 
         $model = &$event->sender;
         foreach ($this->fields as $field) {
-            if ($model->{$field}) {
+            if (!isset($model->{$field})) {
+                continue;
+            }
+            
+            if ($model->{$field} && is_string($model->{$field})) {
                 $model->{$field} = explode($this->separator, $model->{$field});
             }
         }
